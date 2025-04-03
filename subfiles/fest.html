@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUSFEST | Cultural Festival</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        /* Animated Gradient Background */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #1a2a3a, #2c3e50, #34495e, #1a2a3a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(26, 42, 58, 0.95);
+            padding: 0 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            height: 100px;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid #f39c12;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            height: 120px;
+            width: 120px;
+            transition: transform 0.3s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            margin-left: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #f8f9fa;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 15px 20px;
+            display: block;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            background: url('cultural-bg.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 220px 20px 150px;
+            position: relative;
+            margin-top: 100px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .date-badge {
+            background: rgba(243, 156, 18, 0.2);
+            border: 2px solid #f39c12;
+            padding: 10px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            background: #f39c12;
+            color: white;
+            padding: 16px 35px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border: 2px solid transparent;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #f39c12;
+            border-color: #f39c12;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 50px;
+        }
+
+        /* Events Section */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #f39c12;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .events {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.15);
+            width: 350px;
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .event-card h3 {
+            color: #f39c12;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .event-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .event-card .event-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #f1c40f;
+        }
+
+        .register-btn {
+            background: #3498db;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 15px;
+            border: 2px solid transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .register-btn:hover {
+            background: transparent;
+            color: #3498db;
+            border-color: #3498db;
+            transform: translateY(-3px);
+        }
+
+        /* Schedule Section */
+        .schedule {
+            max-width: 900px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .schedule h3 {
+            color: #f39c12;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        .day-schedule {
+            margin-bottom: 30px;
+        }
+
+        .day-title {
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+            border-bottom: 2px solid rgba(241, 196, 15, 0.3);
+            padding-bottom: 5px;
+        }
+
+        .time-slot {
+            display: flex;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .time {
+            font-weight: 600;
+            color: #f39c12;
+            min-width: 120px;
+        }
+
+        .event-details {
+            flex-grow: 1;
+        }
+
+        .event-details h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+
+        .event-details p {
+            margin: 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Highlights Section */
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.15);
+            width: 250px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            color: #f39c12;
+            margin-bottom: 15px;
+        }
+
+        .highlight-card h3 {
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .highlight-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* Sponsors Section */
+        .sponsors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 30px;
+            background: rgba(26, 42, 58, 0.8);
+            margin: 50px 0;
+            border-top: 3px solid #f39c12;
+            border-bottom: 3px solid #f39c12;
+        }
+
+        .sponsor-logo {
+            height: 80px;
+            width: auto;
+            filter: grayscale(100%) brightness(2);
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .sponsor-logo:hover {
+            filter: none;
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: rgba(26, 42, 58, 0.95);
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 3px solid #f39c12;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            color: #f39c12;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #f39c12;
+            transform: translateY(-5px);
+        }
+
+        /* Back Link */
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-link a {
+            background: #3498db;
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .back-link a:hover {
+            background: transparent;
+            color: #3498db;
+            border-color: #3498db;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(26, 42, 58, 0.9);
+            padding: 20px 0;
+            text-align: center;
+            border-top: 3px solid #f39c12;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #ecf0f1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .event-card {
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            header {
+                padding: 0 20px;
+                height: 90px;
+            }
+            
+            .logo {
+                height: 70px;
+            }
+            
+            header h1 {
+                font-size: 24px;
+            }
+            
+            nav ul li a {
+                padding: 12px 16px;
+                font-size: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav {
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            
+            .hero {
+                padding: 180px 20px 120px;
+                margin-top: 140px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .event-card {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .highlight-card {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .sponsor-logo {
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .date-badge {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 14px 25px;
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .sponsor-logo {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="NEXUSFEST Logo" class="logo">
+                <h1>NEXUSFEST</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#highlights">Highlights</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="date-badge">February 15-17, 2025</div>
+            <h2>NEXUSFEST Cultural Festival</h2>
+            <p>Experience three days of vibrant performances, creative competitions, and cultural celebrations from around the world.</p>
+            <a href="#register" class="cta-button">Register Now</a>
+            <a href="#schedule" class="cta-button" style="background: transparent; border-color: white;">View Schedule</a>
+        </div>
+    </section>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Events Section -->
+        <section id="events">
+            <div class="section-title">
+                <h2>Featured Events</h2>
+                <p>Discover our exciting lineup of cultural performances and competitions</p>
+            </div>
+            
+            <div class="events">
+                <div class="event-card">
+                    <h3>Neon Nights</h3>
+                    <p>Our flagship EDM night featuring top DJs and mesmerizing light shows that will keep you dancing until dawn.</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Day 1 | 8PM</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Main Arena</span>
+                    </div>
+                    <a href="#register" class="register-btn">Register</a>
+                </div>
+                
+                <div class="event-card">
+                    <h3>Urban Chronicles</h3>
+                    <p>A modern theatrical performance blending street dance, spoken word, and digital projections to tell urban stories.</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Day 2 | 6PM</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Drama Hall</span>
+                    </div>
+                    <a href="#register" class="register-btn">Register</a>
+                </div>
+                
+                <div class="event-card">
+                    <h3>Sonic Fusion</h3>
+                    <p>Battle of the bands featuring genres from rock to jazz fusion, showcasing the best campus musical talent.</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Day 3 | 4PM</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Amphitheater</span>
+                    </div>
+                    <a href="#register" class="register-btn">Register</a>
+                </div>
+                
+                <div class="event-card">
+                    <h3>Rhythm Vortex</h3>
+                    <p>A high-energy dance competition featuring contemporary, hip-hop, and fusion categories with celebrity judges.</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Day 1 | 2PM</span>
+                        <span><i class="fas fa-users"></i> Team/Individual</span>
+                    </div>
+                    <a href="#register" class="register-btn">Register</a>
+                </div>
+                
+                <div class="event-card">
+                    <h3>Pixel Wars</h3>
+                    <p>Digital art and design competition where participants create stunning visuals under time constraints.</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Day 2 | 11AM</span>
+                        <span><i class="fas fa-user"></i> Individual</span>
+                    </div>
+                    <a href="#register" class="register-btn">Register</a>
+                </div>
+                
+                <div class="event-card">
+                    <h3>Verbal Velocity</h3>
+                    <p>Fast-paced debate competition with impromptu topics and rapid-fire rounds testing quick thinking.</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Day 3 | 10AM</span>
+                        <span><i class="fas fa-users"></i> Team of 2</span>
+                    </div>
+                    <a href="#register" class="register-btn">Register</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule">
+            <div class="section-title">
+                <h2>Event Schedule</h2>
+                <p>Plan your NEXUSFEST experience with our detailed schedule</p>
+            </div>
+            
+            <div class="schedule">
+                <h3>Three Days of Cultural Celebration</h3>
+                
+                <div class="day-schedule">
+                    <div class="day-title">Day 1: November 15</div>
+                    
+                    <div class="time-slot">
+                        <div class="time">09:00 - 10:00</div>
+                        <div class="event-details">
+                            <h4>Registration & Breakfast</h4>
+                            <p>Main Auditorium Lobby</p>
+                        </div>
+                    </div>
+                    
+                    <div class="time-slot">
+                        <div class="time">10:00 - 11:00</div>
+                        <div class="event-details">
+                            <h4>Opening Ceremony</h4>
+                            <p>Traditional dance performances</p>
+                        </div>
+                    </div>
+                    
+                    <div class="time-slot">
+                        <div class="time">11:30 - 13:00</div>
+                        <div class="event-details">
+                            <h4>Cultural Exhibition</h4>
+                            <p>Showcase of global cultures</p>
+                        </div>
+                    </div>
+                    
+                    <div class="time-slot">
+                        <div class="time">20:00 - 23:00</div>
+                        <div class="event-details">
+                            <h4>Neon Nights</h4>
+                            <p>EDM night with special guest DJ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="day-schedule">
+                    <div class="day-title">Day 2: November 16</div>
+                    
+                    <div class="time-slot">
+                        <div class="time">09:00 - 12:00</div>
+                        <div class="event-details">
+                            <h4>Art Workshops</h4>
+                            <p>Traditional and digital art sessions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="time-slot">
+                        <div class="time">14:00 - 16:00</div>
+                        <div class="event-details">
+                            <h4>Pixel Wars Competition</h4>
+                            <p>Digital art battle</p>
+                        </div>
+                    </div>
+                    
+                    <div class="time-slot">
+                        <div class="time">18:00 - 20:00</div>
+                        <div class="event-details">
+                            <h4>Urban Chronicles</h4>
+                            <p>Theatrical performance</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="day-schedule">
+                    <div class="day-title">Day 3: November 17</div>
+                    
+                    <div class="time-slot">
+                        <div class="time">10:00 - 12:00</div>
+                        <div class="event-details">
+                            <h4>Verbal Velocity Finals</h4>
+                            <p>Debate championship</p>
+                        </div>
+                    </div>
+                    
+                    <div class="time-slot">
+                        <div class="time">14:00 - 16:00</div>
+                        <div class="event-details">
+                            <h4>Sonic Fusion</h4>
+                            <p>Battle of the bands finals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="time-slot">
+                        <div class="time">18:00 - 21:00</div>
+                        <div class="event-details">
+                            <h4>Closing Ceremony & Awards</h4>
+                            <p>With special performances</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section id="highlights">
+            <div class="section-title">
+                <h2>Festival Highlights</h2>
+                <p>What makes NEXUSFEST a must-attend event</p>
+            </div>
+            
+            <div class="highlights">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Star Performers</h3>
+                    <p>Experience performances by renowned artists and emerging talents from across the country.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Creative Events</h3>
+                    <p>Participate in unique competitions that challenge both creativity and performance skills.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Cultural Exchange</h3>
+                    <p>Connect with diverse cultures and traditions from around the world.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Prizes</h3>
+                    <p>Win exciting prizes and opportunities worth over ₹5 lakhs!</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="back-link">
+            <a href="../index.html">Home</a>
+        </div>
+
+        <!-- Sponsors Section -->
+        <section class="sponsors">
+            <img src="brand.jpg" alt="ArtVista" class="sponsor-logo">
+            <h3>ArtVista</h3>
+            <img src="brand.jpg" alt="MusicHub" class="sponsor-logo">
+            <h3>MusicHub</h3>
+            <img src="brand.jpg" alt="CreativeMinds" class="sponsor-logo">
+            <h3>CreativeMinds</h3>
+            <img src="brand.jpg" alt="StageCraft" class="sponsor-logo">
+            <h3>StageCraft</h3>
+            <img src="brand.jpg" alt="CultureConnect" class="sponsor-logo">
+            <h3>CultureConnect</h3>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> University Cultural Center, Arts Road, Campus 400001</p>
+                <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                <p><i class="fas fa-envelope"></i> nexusfest@university.edu</p>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/nexusfest" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/nexusfest" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/nexusfest" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/nexusfest" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 NEXUSFEST Cultural Festival. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dynamic gradient colors
+            const colors = [
+                ['#1a2a3a', '#2c3e50', '#34495e']
+            ];
+            
+            let currentIndex = 0;
+            const bgElement = document.querySelector('.gradient-bg');
+            
+            function changeGradient() {
+                currentIndex = (currentIndex + 1) % colors.length;
+                bgElement.style.background = `linear-gradient(-45deg, ${colors[currentIndex].join(', ')})`;
+                bgElement.style.backgroundSize = '400% 400%';
+            }
+            
+            setInterval(changeGradient, 20000);
+    
+            // Header scroll effect
+            const header = document.querySelector('header');
+            let lastScrollTop = 0;
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.scrollY || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                lastScrollTop = scrollTop;
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Smooth scrolling for buttons
+            document.querySelectorAll('.cta-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
