@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHSPHERE UNIVERSITY Infrastructure Catalogue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        /* Animated Gradient Background */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #1a2a3a, #2c3e50, #34495e, #1a2a3a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(26, 42, 58, 0.95);
+            padding: 0 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            height: 100px;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid #f39c12;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 120px;
+            width: 120px;
+            transition: transform 0.3s ease;
+        }
+
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            align-items: center;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            margin-right: auto;
+            margin-left: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #f8f9fa;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 15px 20px;
+            display: block;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #2c3e50;
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 8px 8px;
+            top: 100%;
+            left: 0;
+            z-index: 1001;
+            padding: 8px 0;
+            border-top: 3px solid #f39c12;
+        }
+
+        .dropdown-content a {
+            color: #ecf0f1;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-size: 14px;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-content a:hover {
+            background: #34495e;
+            color: #f39c12;
+            padding-left: 25px;
+            border-left: 3px solid #f39c12;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown > a::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 6px;
+            vertical-align: middle;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            background: url('pi1.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 180px 20px 120px;
+            position: relative;
+            margin-top: 100px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background: #f39c12;
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            font-weight: 600;
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #f39c12;
+            border-color: #f39c12;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 50px;
+        }
+
+        /* Admission Portal */
+        .admission-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            margin: 40px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .admission-box h3 {
+            font-size: 2rem;
+            color: #f1c40f;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .admission-box p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .apply-btn {
+            background: #f1c40f;
+            color: #1a2a3a;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+
+        .apply-btn:hover {
+            background: transparent;
+            color: #f1c40f;
+            border-color: #f1c40f;
+            transform: translateY(-3px);
+        }
+
+        /* Infrastructure Section */
+        .infrastructure {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .infra-box {
+            background: rgba(255, 255, 255, 0.15);
+            width: 500px;
+            min-height: 280px;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .infra-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .infra-box h3 {
+            color: #f39c12;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .infra-box p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .goto-button {
+            background: #3498db;
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+            border: 2px solid transparent;
+        }
+
+        .goto-button:hover {
+            background: transparent;
+            color: #3498db;
+            border-color: #3498db;
+            transform: translateY(-3px);
+        }
+
+        /* Statistics Bar */
+        .stats-bar {
+            background: rgba(26, 42, 58, 0.9);
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 1200px;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f39c12;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Compact Contact Section */
+        #contact {
+            background: rgba(26, 42, 58, 0.95);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 3px solid #f39c12;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            color: #f39c12;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #f39c12;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(26, 42, 58, 0.9);
+            padding: 20px 0;
+            text-align: center;
+            border-top: 3px solid #f39c12;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #ecf0f1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .infra-box {
+                width: 450px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            header {
+                padding: 0 20px;
+                height: 90px;
+            }
+            
+            .logo {
+                height: 80px;
+                width: 80px;
+            }
+            
+            header h1 {
+                font-size: 24px;
+            }
+            
+            nav ul li a {
+                padding: 12px 16px;
+            }
+            
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+            
+            .infra-box {
+                width: 400px;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            .logo-container {
+                margin-bottom: 10px;
+            }
+            
+            nav {
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            
+            .dropdown-content {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .hero {
+                padding: 150px 20px 100px;
+                margin-top: 140px;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .infra-box {
+                width: 90%;
+                padding: 25px;
+            }
+            
+            .stats-bar {
+                flex-direction: column;
+                gap: 25px;
+                padding: 20px 10px;
+            }
+            
+            .stat-item {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .admission-box {
+                width: 90%;
+                padding: 25px;
+            }
+            
+            .infra-box {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 22px;
+            }
+            
+            .logo {
+                height: 60px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+    
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Navigation Bar -->
+        <header>
+            <div class="logo-container">
+                <img src="subfiles/logo.jpg" alt="TECHSPHERE UNIVERSITY Logo" class="logo">
+                <h1>TECHSPHERE UNIVERSITY</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Events</a>
+                        <div class="dropdown-content">
+                            <a href="#">Gravitas</a>
+                            <a href="#">Riviera</a>
+                            <a href="#">Tech Symposium</a>
+                            <a href="#">Cultural Fest</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Infrastructure</a>
+                        <div class="dropdown-content">
+                            <a href="subfiles/auditoriums.html">Auditoriums</a>
+                            <a href="subfiles/seminar.html">Seminar Halls</a>
+                            <a href="subfiles/labs.html">Laboratories</a>
+                            <a href="subfiles/cells.html">Research Cells</a>
+                            <a href="subfiles/library.html">Library</a>
+                        </div>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Explore TECHSPHERE's World-Class Infrastructure</h2>
+            <p>Discover our state-of-the-art facilities designed to foster innovation, learning, and research excellence across all disciplines.</p>
+            <a href="#" class="cta-button">Explore Facilities</a>
+        </section>
+
+        <!-- Admission Portal -->
+        <div class="admission-box">
+            <h3>Admissions Open!</h3>
+            <p>Join our vibrant academic community and access world-class infrastructure that empowers your educational journey.</p>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Infrastructure Sections -->
+        <div class="infrastructure">
+            <div class="infra-box">
+                <div>
+                    <h3>Auditoriums</h3>
+                    <p>Our cutting-edge auditoriums feature advanced acoustics, high-capacity seating, and the latest presentation technology. Perfect for conferences, lectures, and cultural events with capacities ranging from 200 to 1000 attendees.</p>
+                </div>
+                <a href="subfiles/auditoriums.html" class="goto-button">View Auditoriums</a>
+            </div>
+            
+            <div class="infra-box">
+                <div>
+                    <h3>Seminar Halls</h3>
+                    <p>Modern seminar spaces equipped with interactive smart boards, high-quality audio-visual systems, and flexible seating arrangements. Ideal for workshops, guest lectures, and corporate meetings with capacities from 50 to 300 participants.</p>
+                </div>
+                <a href="subfiles/seminar.html" class="goto-button">View Seminar Halls</a>
+            </div>
+        </div>
+
+        <div class="infrastructure">
+            <div class="infra-box">
+                <div>
+                    <h3>Laboratories</h3>
+                    <p>Specialized research and teaching labs featuring industry-standard equipment across engineering, computer science, biotechnology, and physical sciences. Our facilities include 24/7 access to advanced computing resources and prototyping tools.</p>
+                </div>
+                <a href="subfiles/labs.html" class="goto-button">Explore Labs</a>
+            </div>
+            
+            <div class="infra-box">
+                <div>
+                    <h3>Research Cells</h3>
+                    <p>Dedicated spaces including our Technology Business Incubator (TBI), Innovation Center, and specialized research cells that provide resources, mentorship, and collaborative environments for groundbreaking research and startup development.</p>
+                </div>
+                <a href="subfiles/cells.html" class="goto-button">Discover Cells</a>
+            </div>
+        </div>
+
+        <!-- Statistics Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">A++</div>
+                <div class="stat-label">GRADE BY NAAC, MHRD</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">190+</div>
+                <div class="stat-label">Foreign Adjunct Professors</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">International Partners</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">372 acre</div>
+                <div class="stat-label">Eco-friendly campus</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">212th</div>
+                <div class="stat-label">QS World Ranking</div>
+            </div>
+        </div>
+
+        <!-- Compact Contact Section -->
+        <section id="contact">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Techsphere University Campus, Innovation Road, Tech City 400001</p>
+                <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                <p><i class="fas fa-envelope"></i> info@techsphere.edu</p>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/techsphere" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:info@techsphere.edu"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/school/techsphere" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/techsphere" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 TECHSPHERE UNIVERSITY. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dynamic gradient colors
+            const colors = [
+                ['#1a2a3a']
+            ];
+            
+            let currentIndex = 0;
+            const bgElement = document.querySelector('.gradient-bg');
+            
+            function changeGradient() {
+                currentIndex = (currentIndex + 1) % colors.length;
+                bgElement.style.background = `linear-gradient(-45deg, ${colors[currentIndex].join(', ')})`;
+                bgElement.style.backgroundSize = '400% 400%';
+            }
+            
+            setInterval(changeGradient, 20000);
+    
+            // Header scroll effect
+            const header = document.querySelector('header');
+            let lastScrollTop = 0;
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.scrollY || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                lastScrollTop = scrollTop;
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#contact') {
+                        e.preventDefault();
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    } else if (this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
