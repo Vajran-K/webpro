@@ -486,6 +486,32 @@
             transform: translateY(-5px);
         }
 
+         /* Back Link */
+         .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-link a {
+            background: #3498db;
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .back-link a:hover {
+            background: transparent;
+            color: #3498db;
+            border-color: #3498db;
+            transform: translateY(-3px);
+        }
+
         /* Footer */
         footer {
             background: rgba(26, 42, 58, 0.9);
@@ -624,6 +650,9 @@
             </div>
             <nav>
                 <ul>
+                    <div>
+                        <li><a href="../index.html">Home</a></li>
+                    </div>
                     <li><a href="#about">About</a></li>
                     <li><a href="#events">Events</a></li>
                     <li><a href="#schedule">Schedule</a></li>
@@ -866,6 +895,10 @@
                 </div>
             </div>
         </section>
+
+        <div class="back-link">
+            <a href="../index.html">Home</a>
+        </div>
 
         <!-- Sponsors Section -->
         <section class="sponsors">
