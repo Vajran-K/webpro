@@ -982,7 +982,7 @@
             
             function changeGradient() {
                 currentIndex = (currentIndex + 1) % colors.length;
-                bgElement.style.background = linear-gradient(-45deg, ${colors[currentIndex].join(', ')});
+                bgElement.style.background = `linear-gradient(-45deg, ${colors[currentIndex].join(', ')})`;
                 bgElement.style.backgroundSize = '400% 400%';
             }
             
